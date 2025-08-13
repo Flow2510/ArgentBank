@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './login.scss'
 
 export default function LogIn() {
@@ -19,7 +20,9 @@ export default function LogIn() {
                     <input className='login__checkbox' type="checkbox" id="remember-me" />
                     <label htmlFor="remember-me">Remember me</label>
                 </div>
-                <button type="submit" className="login__button">Sign In</button>
+                <Link to='/user'>
+                    <button type="submit" className="login__button">Sign In</button>
+                </Link>
             </form>
         </section>
     </div>
