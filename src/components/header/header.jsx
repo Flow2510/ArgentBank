@@ -1,4 +1,5 @@
 import './header.scss'
+import logo from '../../assets/images/argentBankLogo.png'
 
 export default function Header() {
     return(
@@ -7,7 +8,7 @@ export default function Header() {
                 <a className="main-nav-logo" href="./index.html">
                     <img
                     className="main-nav-logo-image"
-                    src="./img/argentBankLogo.png"
+                    src={logo}
                     alt="Argent Bank Logo"
                     />
                     <h1 className="sr-only">Argent Bank</h1>
@@ -18,4 +19,4 @@ export default function Header() {
                 </nav>
         </header>
     )
-}
+};
