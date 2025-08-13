@@ -4,11 +4,11 @@
     justify-content: center;
     position: relative;
     height: 300px;
-    align-items: center;
 
     @media screen and (min-width:900px) {
         justify-content: end;
         height: 400px;
+        align-items: center;
     }
 
     &__background{
@@ -17,6 +17,11 @@
         z-index: -10;
         height: 100%;
         object-fit: cover;
+        object-position: 0 -3rem;
+
+        @media screen and (min-width:900px){
+            object-position: 0% 33%;
+        }
     }
 
     &__content{
@@ -24,6 +29,28 @@
         height: fit-content;
         padding: 2rem;
         margin: 2rem;
+        max-width: 250px;
+
+        @media screen and (min-width:900px){
+            max-width: 370px;
+        }
+    }
+
+    &__subtitle{
+        font-weight: bold;
+
+        @media screen and (min-width:900px){
+            font-size: 1.5rem;
+        }
+    }
+
+    &__text{
+        font-size: 0.9rem;
+        margin-top: 1rem;
+
+        @media screen and (min-width:900px){
+            font-size: 1.2rem;
+        }
     }
 }
 

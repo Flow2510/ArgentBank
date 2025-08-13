@@ -9,14 +9,14 @@ export default function LogIn() {
             <form className='login__form'>
                 <div className="login__input-wrapper">
                     <label htmlFor="username">Username</label>
-                    <input type="text" id="username" />
+                    <input className='login__input' type="text" id="username" />
                 </div>
                 <div className="login__input-wrapper">
                     <label htmlFor="password">Password</label>
-                    <input type="password" id="password" />
+                    <input className='login__input' type="password" id="password" />
                 </div>
                 <div className="login__checkbox-wrapper">
-                    <input type="checkbox" id="remember-me" />
+                    <input className='login__checkbox' type="checkbox" id="remember-me" />
                     <label htmlFor="remember-me">Remember me</label>
                 </div>
                 <button type="submit" className="login__button">Sign In</button>

@@ -1,6 +1,14 @@
 .features__item{
-    padding: 1rem;
+    padding: 2.5rem;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+
+    &-title{
+        font-size: 1.25rem;
+    }
 
     &-icon{
         width: 152px;
