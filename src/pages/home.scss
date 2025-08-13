@@ -6,6 +6,11 @@
     height: 300px;
     align-items: center;
 
+    @media screen and (min-width:900px) {
+        justify-content: end;
+        height: 400px;
+    }
+
     &__background{
         width: 100%;
         position: absolute;
@@ -24,4 +29,8 @@
 
 .features{
     text-align: center;
+
+    @media screen and (min-width:900px) {
+        display: flex;
+    }
 }
