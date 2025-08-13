@@ -8,7 +8,7 @@ import './home.scss'
 export default function Home(){
     
     return(
-        <main>
+        <div className='home'>
             <div className="hero">
                 <img src={heroBackground} alt="" className='hero__background'/>
                 <section className="hero__content">
@@ -40,6 +40,6 @@ export default function Home(){
                     text="We use top of the line encryption to make sure your data and money is always safe."
                 />
             </section>
-        </main>
+        </div>
     )
 }
