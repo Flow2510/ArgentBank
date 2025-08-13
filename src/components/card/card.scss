@@ -1,0 +1,11 @@
+.features__item{
+    padding: 1rem;
+
+    &-icon{
+        width: 152px;
+        aspect-ratio: 1;
+        border-radius: 9999px;
+        border: 10px solid #00bc77;
+        padding: 1rem;
+    }
+}

@@ -1,13 +1,16 @@
 import iconChat from '../assets/images/icon-chat.png';
 import iconMoney from '../assets/images/icon-money.png';
 import iconSecurity from '../assets/images/icon-security.png';
+import heroBackground from '../assets/images/bank-tree.jpeg';
 import Card from '../components/card/card';
+import './home.scss'
 
 export default function Home(){
     
     return(
         <main>
             <div className="hero">
+                <img src={heroBackground} alt="" className='hero__background'/>
                 <section className="hero__content">
                     <h2 className="sr-only">Promoted Content</h2>
                     <p className="hero__subtitle">No fees.</p>
