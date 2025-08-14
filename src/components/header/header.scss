@@ -7,7 +7,11 @@
         align-items: center;
 
         &-logo{
-            max-width: 200px;
+            max-width: 180px;
+
+            @media screen and (min-width:900px) {
+                max-width: 200px;
+            }
         }
 
         &-link{

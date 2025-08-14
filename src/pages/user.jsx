@@ -11,11 +11,11 @@ export default function User(){
             <h2 className="sr-only">Accounts</h2>
             <AccountCard 
                 count="x8349"
-                amount="$10,928.42"
+                amount="$2,082.79"
             />
             <AccountCard 
                 count="x6712"
-                amount="$2,082.79"
+                amount="$10,928.42"
             />
             <AccountCard 
                 count="x8349"
