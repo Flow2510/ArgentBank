@@ -38,10 +38,10 @@ export default function User() {
         {info && (
           <section className='user'>
             <div className='user__content'>
-              <h1 className='user__content-title'>Welcome back {info.firstName}<br />{info.lastName}</h1>
+              <h1 className='user__content-title'>Welcome back<br />{info.firstName} {info.lastName}</h1>
               <button className='user__content-button'>Edit Name</button>
             </div>
-            <div>
+            <div className='user__gallery'>
               <Account 
                 account="Argent Bank Checking"
                 count="x8349"
