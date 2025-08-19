@@ -1,0 +1,11 @@
+.card{
+    text-align: center;
+    padding: 2.5rem;
+
+    &__icon{
+        width: 100px;
+        border: 10px solid #00bc77;
+        border-radius: 9999px;
+        padding: 1rem;
+    }
+}
