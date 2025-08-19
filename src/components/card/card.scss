@@ -8,4 +8,14 @@
         border-radius: 9999px;
         padding: 1rem;
     }
+
+    &__title{
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin: 1.2rem 0 1rem;
+    }
+
+    &__text{
+        font-weight: 300;
+    }
 }

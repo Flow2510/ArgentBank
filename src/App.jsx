@@ -9,7 +9,7 @@ import User from './pages/user/user'
 function App() {
 
   return (
-    <>
+    <div className='app'>
       <Header />
       <Routes>
         <Route path='/' element={<Home />}/>
@@ -17,7 +17,7 @@ function App() {
         <Route path='/user' element={<User />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   )
 }
 

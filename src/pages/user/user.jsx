@@ -1,11 +1,17 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setInfo } from '../../data/store';
+import Account from '../../components/account/account';
+import './user.scss'
 
 export default function User() {
   const dispatch = useDispatch();
   const token = useSelector(state => state.user.token);
   const info = useSelector(state => state.user.info);
+
+  useEffect(() => {
+    console.log(info)
+  })
 
   useEffect(() => {
     if (!token) return; // on attend d’avoir le token
@@ -27,14 +33,37 @@ export default function User() {
   }, [token, dispatch]);
 
   return (
-    <div>
-      <h1>Page User</h1>
-      {info && (
-        <div>
-          <p>Name: {info.firstName}</p>
-          <p>Email: {info.email}</p>
-        </div>
+    <main>
+      <div className='user__wrapper'>
+        {info && (
+          <section className='user'>
+            <div className='user__content'>
+              <h1 className='user__content-title'>Welcome back {info.firstName}<br />{info.lastName}</h1>
+              <button className='user__content-button'>Edit Name</button>
+            </div>
+            <div>
+              <Account 
+                account="Argent Bank Checking"
+                count="x8349"
+                balance="$2,082.79"
+                subtitle="Available Balance"
+              />
+              <Account 
+                account="Argent Bank Savings"
+                count="x6712"
+                balance="$10,928.42"
+                subtitle="Available Balance"
+              />
+              <Account 
+                account="Argent Bank Credit Card"
+                count="x8349"
+                balance="$184.30"
+                subtitle="Current Balance"
+              />
+            </div>
+        </section>
       )}
-    </div>
+      </div>
+    </main>
   );
 }

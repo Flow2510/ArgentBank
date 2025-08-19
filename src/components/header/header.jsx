@@ -13,22 +13,26 @@ export default function Header() {
             <Link to='/'>
                 <img className='header__logo' src={logo} alt="argent bank logo" />
             </Link>
-            <div>
+            <nav className='header__nav'>
                 {loggedIn ? (
                     <>
-                        <Link to='/user'>
-                            <button>
-                                <i className="fa fa-user-circle"></i>{info ? info.firstName : 'user'}
+                        <Link className='header__link' to='/user'>
+                            <button className='header__button'>
+                                <i className="fa fa-user-circle header__icon"></i>{info ? info.firstName : 'user'}
                             </button>
                         </Link>
-                            <button onClick={() => dispatch(logout())}>
-                                <i className="fa-solid fa-arrow-right-from-bracket"></i>Sign Out
+                            <button className='header__button' onClick={() => dispatch(logout())}>
+                                <i className="fa-solid fa-arrow-right-from-bracket header__icon"></i>Sign Out
                             </button>
                     </>
                 ) : (
-                    <Link to='/login'><i className="fa-solid fa-user"></i>Sign In</Link>
+                    <Link className='header__link' to='/login'>
+                        <button className='header__button'>
+                            <i className="fa-solid fa-user header__icon"></i>Sign In
+                        </button>
+                    </Link>
                 )}
-            </div>
+            </nav>
         </header>
     )
 }
