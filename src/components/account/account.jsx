@@ -1,4 +1,5 @@
-import './account.scss'
+import './account.scss';
+import PropTypes from "prop-types";
 
 export default function Account({ account, count, balance, subtitle}){
     return(
@@ -12,3 +13,10 @@ export default function Account({ account, count, balance, subtitle}){
         </article>
     )
 }
+
+Account.propTypes = {
+    account: PropTypes.string.isRequired,
+    count: PropTypes.string.isRequired,
+    balance: PropTypes.string.isRequired,
+    subtitle:PropTypes.string.isRequired
+};
