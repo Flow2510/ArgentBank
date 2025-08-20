@@ -2,8 +2,15 @@
     position: relative;
     height: 300px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    
+
+    @media screen and (min-width:800px){
+        height: 400px;
+        justify-content: flex-end;
+        padding-right: 5rem;
+    }
 
     &__background{
         position: absolute;
@@ -14,23 +21,47 @@
         object-fit: cover;
         object-position: 0 -50px;
         z-index: -10;
+
+        @media screen and (min-width:800px){
+            object-position: 0 33%;
+        }
     }
 
     &__content{
         background-color: white;
         padding: 2rem;
         width: 260px;
-        margin: 0 auto;
         transform: translatey(-30px);
+        
+        @media screen and (min-width:800px) {
+            transform: translateY(0);
+            width: 360px;
+        }
 
         &-title{
             font-size: 1rem;
             font-weight: bold;
+
+            @media screen and (min-width:800px) {
+                font-size: 1.5rem;
+            }
         }
 
         &-text{
             font-size: 0.9rem;
             margin-top: 1rem;
+
+            @media screen and (min-width:800px) {
+                font-size: 1.2rem;
+            }
         }
+    }
+}
+
+.info{
+
+
+    @media screen and (min-width:800px) {
+        display: flex;
     }
 }
