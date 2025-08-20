@@ -10,10 +10,6 @@ export default function User() {
   const info = useSelector(state => state.user.info);
 
   useEffect(() => {
-    console.log(info)
-  })
-
-  useEffect(() => {
     if (!token) return; // on attend d’avoir le token
 
     fetch("http://localhost:3001/api/v1/user/profile", {
@@ -38,7 +34,7 @@ export default function User() {
         {info && (
           <section className='user'>
             <div className='user__content'>
-              <h1 className='user__content-title'>Welcome back<br />{info.firstName} {info.lastName}</h1>
+              <h1 className='user__content-title'>Welcome back<br />{info.firstName} {info.lastName} !</h1>
               <button className='user__content-button'>Edit Name</button>
             </div>
             <div className='user__gallery'>
