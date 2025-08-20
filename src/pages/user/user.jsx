@@ -9,12 +9,8 @@ export default function User() {
   const token = useSelector(state => state.user.token);
   const info = useSelector(state => state.user.info);
   const [editMode, setEditMode] = useState(false);
-
-  useEffect(() => {
-    console.log(info)
-  })
-
-  useEffect(() => {
+  const [newUserName, setNewUserName] = useState();
+  const fetchInfo = () => {
     if (!token) return; // on attend d’avoir le token
 
     fetch("http://localhost:3001/api/v1/user/profile", {
@@ -31,12 +27,45 @@ export default function User() {
         }
       })
       .catch(err => console.error(err));
+  }
+
+  useEffect(() => {
+    if (token) {
+      fetchInfo();
+    }
   }, [token, dispatch]);
 
   const handleClick = (e) => {
     e.preventDefault();
     setEditMode(false);
   }
+
+  const editName = (e) => {
+    e.preventDefault();
+  fetch("http://localhost:3001/api/v1/user/profile", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
+    },
+    body: JSON.stringify({
+      userName: newUserName
+    })
+  })
+  .then(res => {
+    if (!res.ok) {
+      throw new Error("Erreur serveur");
+    }
+    return res.json();
+  })
+  .then(() => {
+    alert("Modification OK");
+    fetchInfo();
+  })
+  .catch(error => {
+    alert("Erreur: " + error.message);
+  });
+};
 
   return (
     <main>
@@ -56,7 +85,7 @@ export default function User() {
                   <form className='user__form' action="">
                     <div className='user__input-wrapper'>
                       <label htmlFor="userNameInput">User name:</label>
-                      <input type="text" name='userNameInput' id='userNameInput' placeholder={info.userName}/>
+                      <input type="text" name='userNameInput' id='userNameInput' placeholder={info.userName} onChange={(e) => setNewUserName(e.target.value)}/>
                     </div>
                     <div className='user__input-wrapper'>
                       <label htmlFor="firstNameInput">First name:</label>
@@ -67,7 +96,7 @@ export default function User() {
                       <input type="text" name='lastNameInput' id='lastNameInput' placeholder={info.lastName} disabled/>
                     </div>
                     <div className='user__button-wrapper'>
-                      <button>Save</button>
+                      <button onClick={editName}>Save</button>
                       <button onClick={handleClick}>Cancel</button>
                     </div>
                   </form>
